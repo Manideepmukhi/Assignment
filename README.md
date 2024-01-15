@@ -33,7 +33,7 @@ This project is a simple Spring Boot application that serves as a Customer Manag
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 8 or later
+- Java Development Kit (JDK)
 - Maven (for building and managing dependencies)
 
 ### Installation
@@ -41,16 +41,15 @@ This project is a simple Spring Boot application that serves as a Customer Manag
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/spring-boot-customer-management.git
+   git clone https://github.com/Manideepmukhi/Assignment.git
    
 2.Navigate to the project directory:
-cd spring-boot-customer-management
+cd Assignment
 
 3.Build the project using Maven:
 mvn clean install
 
 4. Run the application:
-java -jar target/demo-0.0.1-SNAPSHOT.jar
 
 ### Usage
 Once the application is running, you can access the API endpoints using your preferred API client (e.g., Postman). Refer to the API Endpoints section for details on available endpoints.
@@ -61,7 +60,7 @@ GET /api/customers/{id}: Retrieve a customer by ID
 POST /api/customers: Create a new customer
 PUT /api/customers/{id}: Update an existing customer
 DELETE /api/customers/{id}: Delete a customer by ID
-POST /api/customers/sync: Synchronize customers from a remote API
+POST /api/customers/sync: Synchronize customers from a remote API for sync button
 
 ### Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or create a pull request.
