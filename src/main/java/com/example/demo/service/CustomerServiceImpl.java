@@ -52,12 +52,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void syncCustomersFromRemoteApi(String token) {
         // implemented all these 3 func. in this method
-        // 1. Make an HTTP request to the remote API using the token.
-        // 2. Receive a list of customers in the response.
-        // 3. Iterate through the list and update or insert each customer into the database.
+        // 1. Making an HTTP request to the remote API using the token.
+        // 2. To reacive a list of customers in the response.
+        // 3. Iterating through the list and update or insert each customer into the database.
 
         // Example URL for fetching customers from the remote API
-        String apiUrl = "https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list";
+        String apiUrl = "https://qa.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list";
 
         // Set the Authorization header with the provided token
         

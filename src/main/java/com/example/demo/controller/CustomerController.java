@@ -1,40 +1,56 @@
-// Model class representing an authentication request
+// Controller class for handling HTTP requests related to customers
 
-package com.example.demo.model;
+package com.example.demo.controller;
 
-public class AuthRequest {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import com.example.demo.model.Customer;
+import com.example.demo.service.CustomerService;
+import java.util.List;
 
-    // Fields for login ID and password
-    private String login_id;
-    private String password;
+@RestController
+@RequestMapping("/api/customers")
+public class CustomerController {
+    
+    // Autowired annotation for dependency injection of CustomerService
+    @Autowired
+    private CustomerService customerService;
 
-    // Default constructor
-    public AuthRequest() {
+    // Endpoint to retrieve all customers
+    @GetMapping
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
     }
 
-    // Parameterized constructor for setting login ID and password
-    public AuthRequest(String login_id, String password) {
-        this.login_id = login_id;
-        this.password = password;
+    // Endpoint to retrieve a customer by ID
+    @GetMapping("/{id}")
+    public Customer getCustomerById(@PathVariable Long id) {
+        return customerService.getCustomerById(id);
     }
 
-    // Getter method for retrieving login ID
-    public String getLogin_id() {
-        return login_id;
+    // Endpoint to create a new customer
+    @PostMapping
+    public Customer createCustomer(@RequestBody Customer customer) {
+        return customerService.createOrUpdateCustomer(customer);
     }
 
-    // Setter method for setting login ID
-    public void setLogin_id(String login_id) {
-        this.login_id = login_id;
+    // Endpoint to update an existing customer
+    @PutMapping("/{id}")
+    public Customer updateCustomer(@PathVariable(name = "id") Long id, @RequestBody Customer customer) {
+        // Set the ID of the customer to update
+        customer.setId(id);
+        return customerService.createOrUpdateCustomer(customer);
     }
 
-    // Getter method for retrieving password
-    public String getPassword() {
-        return password;
+    // Endpoint to delete a customer by ID
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable(name = "id") Long id) {
+        customerService.deleteCustomer(id);
     }
 
-    // Setter method for setting password
-    public void setPassword(String password) {
-        this.password = password;
+    // Endpoint to synchronize customers from a remote API using a provided token
+    @PostMapping("/sync")
+    public void syncCustomers(@RequestBody String token) {
+        customerService.syncCustomersFromRemoteApi(token);
     }
 }

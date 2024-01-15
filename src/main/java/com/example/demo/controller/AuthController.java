@@ -23,7 +23,7 @@ public class AuthController {
         
 
         //  URL for authentication
-        String apiUrl = "https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp";
+        String apiUrl = "https://qa.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp";
 
         // Creating a RestTemplate for making HTTP requests
         RestTemplate restTemplate = new RestTemplate();
