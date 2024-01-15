@@ -56,10 +56,15 @@ Once the application is running, you can access the API endpoints using your pre
 
 ### API Endpoints
 GET /api/customers: Retrieve all customers
+
 GET /api/customers/{id}: Retrieve a customer by ID
+
 POST /api/customers: Create a new customer
+
 PUT /api/customers/{id}: Update an existing customer
+
 DELETE /api/customers/{id}: Delete a customer by ID
+
 POST /api/customers/sync: Synchronize customers from a remote API for sync button
 
 ### Contributing
