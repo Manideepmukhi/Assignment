@@ -11,4 +11,3 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     // Custom query method to find a customer by their unique UUID
     Customer findByUuid(String uuid);
 }
-

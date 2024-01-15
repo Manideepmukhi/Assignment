@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -48,7 +49,11 @@ public class CustomerServiceImpl implements CustomerService {
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
-
+    
+    public List<Customer> getAllCustomersWithSort(String sortBy) {
+        Sort sort = Sort.by(sortBy);
+        return customerRepository.findAll(sort);
+    }
     @Override
     public void syncCustomersFromRemoteApi(String token) {
         // implemented all these 3 func. in this method

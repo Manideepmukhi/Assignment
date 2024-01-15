@@ -21,4 +21,6 @@ public interface CustomerService {
 
     // Method to synchronize customers from a remote API using a provided token
     void syncCustomersFromRemoteApi(String token);
+    
+    List<Customer> getAllCustomersWithSort(String sortBy);
 }

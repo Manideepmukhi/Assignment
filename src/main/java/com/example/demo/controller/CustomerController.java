@@ -27,6 +27,10 @@ public class CustomerController {
     public Customer getCustomerById(@PathVariable Long id) {
         return customerService.getCustomerById(id);
     }
+    
+    @GetMapping("/sort")
+    public List<Customer> getAllCustomersWithSort(@RequestParam(defaultValue = "uuid") String sortBy) {
+        return customerService.getAllCustomersWithSort(sortBy);}
 
     // Endpoint to create a new customer
     @PostMapping
