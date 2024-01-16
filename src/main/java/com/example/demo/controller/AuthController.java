@@ -37,7 +37,7 @@ public class AuthController {
         // Making the HTTP POST request to the authentication API
         ResponseEntity<String> response = restTemplate.postForEntity(apiUrl, requestBody, String.class);
 
-        // Log the response body and status code.Created for checking error as it was throwing some.
+        // Logging the response body and status code. Created for checking error as it was throwing some.
         System.out.println("Response Body: " + response.getBody());
         System.out.println("Status Code: " + response.getStatusCodeValue());
 
@@ -57,7 +57,7 @@ public class AuthController {
             JsonNode jsonNode = objectMapper.readTree(responseBody);
             return jsonNode.get("access_token").asText();
         } catch (Exception e) {
-            e.printStackTrace(); // Handle the exception if it have any
+            e.printStackTrace(); // handling the exception if it have any
             return null;
         }
     }

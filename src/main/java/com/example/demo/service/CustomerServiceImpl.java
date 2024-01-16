@@ -64,7 +64,6 @@ public class CustomerServiceImpl implements CustomerService {
         // Example URL for fetching customers from the remote API
         String apiUrl = "https://qa.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list";
 
-        // Set the Authorization header with the provided token
         
 
         // Create a RestTemplate for making HTTP requests
@@ -96,12 +95,11 @@ public class CustomerServiceImpl implements CustomerService {
                 }
             }
         } else {
-            // Log or handle unexpected status code
-            // For example, log the status code and response body
+            // Log or handle unexpected status code so logging the status code and response body
             System.out.println("Response body: " + Arrays.toString(response.getBody()));
         }}
         catch (Exception e) {
-            // Log or handle the exception
+            // handling the exception
             e.printStackTrace();
         }
     }
